@@ -1,56 +1,63 @@
 <!DOCTYPE html>
-<html ng-app= 'app'>
-  <head>
-    <meta charset="utf-8">
-    <title> Routing </title>
-    <script src="angular.js" charset="utf-8"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js" charset="utf-8"></script>
-    <link href="https://fonts.googleapis.com/css?family=Cuprum|Oswald|Slabo+27px" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<html ng-app='app'>
 
-    <script src="app.js" charset="utf-8"></script>
-    <style media="screen">
-      body {
-        font-family: cuprum;
-      }
-      .lefty{
-        background-color: #f2f2f2;
-        border: 2px solid black;
-        padding: 5px;
-      }
-      .righty {
-        color: white;
-        background-color: #393939;
-        border: 2px solid red;
-      }
-      #default {
-        padding: 50px;
-        font-size: 30px;
-        color: yellow;
-      }
-    </style>
+<head>
+  <meta charset="utf-8">
+  <title> Routing </title>
+  <script src="angular.js" charset="utf-8"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js" charset="utf-8"></script>
+  <link href="https://fonts.googleapis.com/css?family=Cuprum|Oswald|Slabo+27px" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  </head>
-  <body>
-    <div class="container">
-      <div class="row"><br><br>
-        <div class="col-md-12 well" >
-          <center><h1> HEADER</h1> </center>
-        </div>
+  <script src="app.js" charset="utf-8"></script>
+  <style media="screen">
+    body {
+      font-family: cuprum;
+    }
+
+    .lefty {
+      background-color: #f2f2f2;
+      border: 2px solid black;
+      padding: 5px;
+    }
+
+    .righty {
+      color: white;
+      background-color: #393939;
+      border: 2px solid red;
+    }
+
+    #default {
+      padding: 50px;
+      font-size: 30px;
+      color: yellow;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row"><br><br>
+      <div class="col-md-12 well">
+        <center>
+          <h1> HEADER</h1> </center>
       </div>
-      <div class="row">
-        <div class="col-md-2 lefty " >
-          <a href="#/profiles"> <h3> PROFILES</h3> </a><br><br><br><br>
-          <a href="#/messages"><h3> MESSAGES</h3></a><br><br><br><br>
-          <a href="#/comments"><h3> COMMENTS  </h3></a><br><br><br><br>
-          <a href="#/unavail"><h3> UNAVAIL  </h3></a><br><br><br><br>
+    </div>
+    <div class="row">
+      <div class="col-md-2 lefty ">
+        <a href="#/profiles">
+          <h3> PROFILES</h3> </a><br><br><br><br>
+        <a href="#/messages"><h3> MESSAGES</h3></a><br><br><br><br>
+        <a href="#/comments"><h3> COMMENTS  </h3></a><br><br><br><br>
+        <a href="#/unavail"><h3> UNAVAIL  </h3></a><br><br><br><br>
 
-        </div>
+      </div>
 
       <div class="col-md-1">
 
       </div>
-      <div class="col-md-9 righty" >
+      <div class="col-md-9 righty">
         <center>
           <div ng-view>
 
@@ -60,4 +67,5 @@
     </div>
   </div>
 </body>
+
 </html>
