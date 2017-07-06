@@ -1,21 +1,54 @@
 var app = angular.module('app', ['ngRoute']);
+app.controller('sample', sample);
+
+
+function sample($routeParams) {
+  this.name_flag = true;
+  console.log("hello Guys");
+  this.name = $routeParams.a;
+
+  this.toggle_name_form = function() {
+    this.name_flag = !this.name_flag;
+    console.log("ng-clicked ! ");
+
+  }
+
+}
 
 app.config(['$routeProvider', function($routeProvider) {
 
   $routeProvider
-    .when('/profiles', {
-      templateUrl: 'profiles.htm'
+    .when('/details', {
+      templateUrl: 'details.htm',
+      controller: sample,
+      caseInsensitiveMatch: true
+    })
+    .when('/profiles/:a', {
+      templateUrl: 'profiles.htm',
+      controller: sample,
+      caseInsensitiveMatch: true
     })
     .when('/messages', {
-      templateUrl: 'messages.htm'
+      templateUrl: 'messages.htm',
+      controller: sample,
+      caseInsensitiveMatch: true
     })
     .when('/comments', {
-      templateUrl: 'comments.htm'
+      templateUrl: 'comments.htm',
+      controller: sample,
+      caseInsensitiveMatch: true
+    })
+    .when('/likes', {
+      redirectTo: '/comments',
+      controller: sample,
+      caseInsensitiveMatch: true
+      //  redirected to Comments Page'
     })
     .when('/unavail', {
       redirectTo: function() {
         alert("so sorry this page isn't available");
         return '/profiles';
+        caseInsensitiveMatch: true
       }
     })
     .when('/', {

@@ -13,18 +13,23 @@
   <style media="screen">
     body {
       font-family: cuprum;
+      background-color: #d1d1d1;
     }
 
     .lefty {
-      background-color: #f2f2f2;
+      background-color: #fff;
       border: 2px solid black;
       padding: 5px;
     }
 
     .righty {
-      color: white;
-      background-color: #393939;
+      color: #191919;
+      background-color: #fff;
       border: 2px solid red;
+    }
+
+    .menu {
+      margin-left: 15px;
     }
 
     #default {
@@ -37,35 +42,51 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="row"><br><br>
-      <div class="col-md-12 well">
-        <center>
-          <h1> HEADER</h1> </center>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-2 lefty ">
-        <a href="#/profiles">
-          <h3> PROFILES</h3> </a><br><br><br><br>
-        <a href="#/messages"><h3> MESSAGES</h3></a><br><br><br><br>
-        <a href="#/comments"><h3> COMMENTS  </h3></a><br><br><br><br>
-        <a href="#/unavail"><h3> UNAVAIL  </h3></a><br><br><br><br>
-
-      </div>
-
-      <div class="col-md-1">
-
-      </div>
-      <div class="col-md-9 righty">
-        <center>
-          <div ng-view>
-
+  <div ng-controller="sample as ss">
+    <div class="container">
+      <div class="row"><br><br>
+        <div class="col-md-9 col-sm-9 ">
+          <center>
+            <h1>  Hello <span ng-if= "!ss.name_flag" >{{ss.name}}</span></h1> </center>
+            <br> <br>
+        </div>
+        <div class="col-md-3 col-sm-3 ">
+          <div ng-show="ss.name_flag">
+            <h5>NAME: <input type="text" ng-model="ss.name" placeholder="Enter your name here"></h5>
+            <button ng-click="ss.toggle_name_form()">Submit</button>
           </div>
-        </center>
+          <span ng-if="!ss.name_flag"> <button ng-click = "ss.toggle_name_form()"> Edit Name</button> </span>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 col-sm-2 lefty ">
+          <div class="menu">
+            <a href="#/details"><h3> DETAILS</h3> </a>
+            <hr><br>
+            <a href="#/profiles/{{ss.name}}"><h3> PROFILES</h3> </a>
+            <hr><br>
+            <a href="#/messages"><h3> MESSAGES</h3></a>
+            <hr><br>
+            <a href="#/comments"><h3> COMMENTS  </h3></a>
+            <hr><br>
+            <a href="#/likes"><h3> LIKES  </h3></a>
+            <hr><br>
+          </div>
+        </div>
+        <div class="col-md-1 col-sm-1">
+        </div>
+        <div class="col-md-9 col-sm-9 righty">
+          <center>
+            <div ng-view>
+              <!--  ng-View-->
+            </div>
+          </center>
+        </div>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>
