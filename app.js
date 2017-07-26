@@ -23,7 +23,7 @@ app.config(['$routeProvider', function($routeProvider) {
       controller: sample,
       caseInsensitiveMatch: true
     })
-    .when('/profiles/:a', {
+    .when('/profiles/:a?', {
       templateUrl: 'profiles.htm',
       controller: sample,
       caseInsensitiveMatch: true
